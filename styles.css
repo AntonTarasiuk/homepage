@@ -26,7 +26,6 @@ body {
 
 .fh {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -53,6 +52,7 @@ body {
 @media screen and (max-width: 576px) {
 
     .main-info,
+    .likes-dislikes-info,
     .contact_info_container {
         flex-direction: column;
     }
@@ -68,6 +68,23 @@ body {
     .experiences {
         margin-right: 0;
     }
+
+    .experiences:not(:last-child),
+    .likes-dislikes__column:not(:last-child) {
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (min-width: 577px) {
+    
+    .likes-dislikes__column:not(:last-child) {
+        margin-right: 50px;
+    }
+
+    .experiences:not(:last-child) {
+        margin-right: 50px;
+    }
+
 }
 
 /* Contact info styles */
@@ -163,7 +180,9 @@ body {
     text-align: justify;
 }
 
-.skills__header {
+.skills__header,
+.likes-dislikes__header,
+.milestones__header {
     color: var(--secondary-text-color);
     text-align: center;
     margin-bottom: 15px;
@@ -177,8 +196,7 @@ body {
 /* Experience and additonal info styles */
 
 .experiences {
-    flex: 1 1 60%;
-    margin-right: 50px;
+    flex: 1 1 50%;
 }
 
 .experiences__header {
@@ -210,8 +228,7 @@ body {
     text-decoration-color: var(--primary-text-color);
 }
 
-.experiences__company-project {
-    margin-left: 15px;
+.experiences__company-project:not(:last-child) {
     margin-bottom: 25px;
 }
 
@@ -230,7 +247,7 @@ body {
 
 .experiences__company-project-responsibilities {
     color: var(--secondary-text-color);
-    padding-left: 20px;
+    padding-left: 18px;
 }
 
 .experiences__company-project-responsibilities-ets-info {
@@ -277,10 +294,6 @@ body {
     color: var(--secondary-text-color);
 }
 
-.additional-info__languages {
-    margin-bottom: 20px;
-}
-
 .additional-info__languages-header {
     color: var(--primary-text-color);
     text-align: left;
@@ -289,4 +302,26 @@ body {
 
 .additional-info__languages-item {
     color: var(--secondary-text-color);
+}
+
+.likes-dislikes-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.likes-dislikes__column {
+    flex: 1 1 50%;
+}
+
+.likes-dislikes__list,
+.milestones__list {
+    color: var(--secondary-text-color);
+    padding-left: 18px;
+}
+
+.likes-dislikes__likes-header,
+.likes-dislikes__dislikes-header {
+    color: var(--primary-text-color);
+    text-align: left;
+    margin-bottom: 20px;
 }
